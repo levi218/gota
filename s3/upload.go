@@ -67,6 +67,9 @@ func UploadFile(upload Upload) (string, error) {
 	if strings.Contains(upload.SrcFile, "html") {
 		contentType = "text/html"
 	}
+	if strings.Contains(upload.SrcFile, "apk") {
+		contentType = "application/vnd.android.package-archive"
+	}
 
 	// Create a new session
 	sess := session.Must(session.NewSession())
